@@ -1,0 +1,34 @@
+{
+	"layout": [{
+		"type": "PackageJson",
+		"templateName": "fm/packagejson.ftl",
+		"path": "/",
+		"outputFileName": "package.json",
+		"params": {
+			"babelcore": "6.26.0",
+			"babelloader": "7.1.2",
+			"babelpresetenv": "1.6.1",
+			"babelpresetreact": "6.24.1",
+			"react": "16.2.0",
+			"reactbootstrap": "0.32.0",
+			"reactdom": "16.2.0",
+			"webpack": "3.10.0",
+			"webpackconfig": "7.5.0",
+			"webpackdevserver": "2.9.7"
+		}
+	}, {
+		"type": "React",
+		"templateName": "fm/reactcomponent.ftl",
+		"path": "/src",
+		"outputFileName": "*.js",
+		"params": ${layout_json},
+		"config": {
+			"templates": {
+				"section": "fm/reactcomponent.ftl",
+				"array": "fm/panel.ftl",
+				"textbox": "fm/formcontrol.ftl",
+				"dropdown": "fm/dropdown.ftl"
+			}
+		}
+	}]
+}
