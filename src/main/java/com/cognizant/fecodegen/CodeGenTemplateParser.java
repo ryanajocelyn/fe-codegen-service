@@ -44,10 +44,16 @@ public class CodeGenTemplateParser {
 		return response;
 	}
 
-	public String read(String templatePath) throws CodeGenException {
+	public String read(String templatePath, boolean isTemplate) throws CodeGenException {
+		String path = templatePath;
+		if (isTemplate) {
+			path = "templates/" + templatePath;
+		}
+		
+		LOGGER.debug("Template Path = " + path);
 		InputStream is = 
 				getClass().getClassLoader()
-							.getResourceAsStream(templatePath);
+							.getResourceAsStream(path);
 		
 		String configString = null;
 		try {

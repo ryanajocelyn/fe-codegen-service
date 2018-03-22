@@ -73,4 +73,16 @@ public class JsonDocument {
 	public void setJson(JsonObject json) {
 		this.json = json;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		if (json != null) {
+			return json.toString();
+		}
+		
+		return "Null JSON object";
+	}
 }

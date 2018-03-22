@@ -3,6 +3,9 @@
  */
 package com.cognizant.fecodegen.utils;
 
+import java.util.Random;
+import java.util.Set;
+
 import com.cognizant.fecodegen.bo.JsonDocument;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -37,6 +40,17 @@ public class JsonUtils {
 				});
 			});
 		});*/
+	}
+	
+	public static Integer getRandomNumber(Set<Integer> generatedRandom) {
+		Random random = new Random();
+		
+		int randomNum = 0;
+		do {
+			randomNum = random.nextInt(100);
+		} while (generatedRandom.add(randomNum) != true);
+		
+		return randomNum;
 	}
 	
 	public static JsonDocument getMockJsonDocument() {

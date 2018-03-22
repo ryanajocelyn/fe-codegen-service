@@ -30,7 +30,7 @@ public class CodeGenerator implements ICodeGenerator {
 	private void configure() throws CodeGenException {
 		if (request != null) {
 			String configName = request.getConfigName();
-			String configString = parser.read("config/"+configName+".json");
+			String configString = parser.read("config/"+configName+".json", false);
 
 			configString = configString.replace("${layout_json}", request.getUiLayout());
 			configJson = JsonUtils.getJsonObject(configString);

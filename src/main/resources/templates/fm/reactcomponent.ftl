@@ -2,11 +2,11 @@ import React from 'react';
 
 ${imports}
 
-class ${label#stripWhiteSpace} extends React.Component {
+class ${label_stripWhiteSpace} extends React.Component {
    render() {
       return (
       		${childComponent}
       );
    }
 }
-export default ${label#stripWhiteSpace};
+export default ${label_stripWhiteSpace};

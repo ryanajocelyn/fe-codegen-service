@@ -30,7 +30,8 @@ public class ReactJsGenerator extends CodeGenerator {
 			JsonObject config = je.getAsJsonObject();
 			String type = config.get("type").getAsString();
 			try {
-				IRenderer renderer = RendererFactory.getRenderer(type, request.getCodeGenPath(), configJson);
+				IRenderer renderer = RendererFactory.getRenderer(type, 
+										request.getCodeGenPath(), new JsonDocument(config));
 				
 				renderer.initializeParams(new JsonDocument(config));
 				renderer.render(new JsonDocument(config.get("params").getAsJsonObject()));
